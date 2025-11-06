@@ -1,7 +1,6 @@
 from nicegui import ui
 
 
-
 @ui.page("/signup")
 def signup_page():
     ui.query(".nicegui-content").classes("m-0 p-0 gap-0")
@@ -55,21 +54,35 @@ def signup_page():
                 ui.separator().classes("my-6 opacity-50")
 
                 # --- Form Inputs ---
-                full_name = ui.input("Full Name").props("outlined").classes(
-                    "rounded-lg h-12 text-base bg-white my-2"
+                full_name = (
+                    ui.input("Full Name")
+                    .props("outlined")
+                    .classes("rounded-lg h-12 text-base bg-white my-2")
                 )
-                email = ui.input("Email Address").props("outlined").classes(
-                    "rounded-lg h-12 text-base bg-white my-2"
+                email = (
+                    ui.input("Email Address")
+                    .props("outlined")
+                    .classes("rounded-lg h-12 text-base bg-white my-2")
                 )
-                password = ui.input(
-                    "Create Password", password=True, password_toggle_button=True
-                ).props("outlined").classes("rounded-lg h-12 text-base bg-white my-2")
-                confirm = ui.input(
-                    "Confirm Password", password=True, password_toggle_button=True
-                ).props("outlined").classes("rounded-lg h-12 text-base bg-white my-2")
-                company = ui.input(
-                    "Company Name (Optional)"
-                ).props("outlined").classes("rounded-lg h-12 text-base bg-white my-2")
+                password = (
+                    ui.input(
+                        "Create Password", password=True, password_toggle_button=True
+                    )
+                    .props("outlined")
+                    .classes("rounded-lg h-12 text-base bg-white my-2")
+                )
+                confirm = (
+                    ui.input(
+                        "Confirm Password", password=True, password_toggle_button=True
+                    )
+                    .props("outlined")
+                    .classes("rounded-lg h-12 text-base bg-white my-2")
+                )
+                company = (
+                    ui.input("Company Name (Optional)")
+                    .props("outlined")
+                    .classes("rounded-lg h-12 text-base bg-white my-2")
+                )
 
                 ui.checkbox(
                     "By creating an account, you agree to our Terms of Service and Privacy Policy."
@@ -79,10 +92,8 @@ def signup_page():
                     "w-full h-12 mt-4 text-white text-base font-bold"
                 )
 
-                with ui.row().classes(
-                    "justify-center mt-6 text-sm text-[#4c669a]"
-                ):
+                with ui.row().classes("justify-center mt-6 text-sm text-[#4c669a]"):
                     ui.label("Already have an account?")
-                    ui.link("Log In", "/vendor/signin").classes(
+                    ui.link("Log In", "/login").classes(
                         "font-bold text-[#1152d4] hover:underline"
                     )

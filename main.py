@@ -6,6 +6,9 @@ from pages import signup
 from pages import login
 from pages import contact
 from pages import services
+from pages import service_domestic
+from pages import service_international
+from pages import service_freight
 
 app.add_static_files("/assets", "assets")
 # Start the NiceGUI application

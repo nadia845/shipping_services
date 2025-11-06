@@ -3,6 +3,7 @@ from nicegui import ui
 
 
 def footer() -> None:
+    
     with ui.column().classes('w-full bg-brand-900 mt-20'):
         with ui.row().classes('max-w-7xl w-full mx-auto justify-between px-10 py-10'):
             with ui.column().classes('gap-2'):

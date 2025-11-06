@@ -6,7 +6,7 @@ BG_LIGHT = "#f6f6f8"
 BG_DARK = "#101622"
 
 
-@ui.page("/quote")
+@ui.page("/contact")
 def contact():
     ui.colors(primary=PRIMARY)
     ui.query("body").style(

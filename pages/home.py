@@ -40,7 +40,9 @@ def home():
         )
 
     # WHY CHOOSE US SECTION
-    with ui.column().classes("py-20 bg-[#F8F9FA] dark:bg-[#101622] text-center"):
+    with ui.column().classes(
+        "py-20 bg-[#F8F9FA] dark:bg-[#101622] flex flex-col justify-center items-center text-center"
+    ):
         ui.label("Why Choose Us?").classes(
             "text-4xl font-bold text-primary dark:text-white"
         )
@@ -67,13 +69,15 @@ def home():
         ]
         with ui.row().classes("justify-center gap-8 flex-wrap"):
             for icon, title, desc in features:
-                with ui.card().classes("w-80 text-center shadow-md p-6"):
+                with ui.card().classes("w-100 text-center shadow-md p-6"):
                     ui.icon(icon).classes("text-4xl text-primary mb-4")
                     ui.label(title).classes("text-lg font-bold")
                     ui.label(desc).classes("text-sm text-gray-600 dark:text-gray-400")
 
     # SERVICES SECTION
-    with ui.column().classes("py-20 bg-white dark:bg-black/20 text-center"):
+    with ui.column().classes(
+        "py-20 bg-white dark:bg-black/20  flex flex-col justify-center items-center text-center w-full"
+    ):
         ui.label("Our Core Services").classes(
             "text-4xl font-bold text-primary dark:text-white"
         )
@@ -86,16 +90,19 @@ def home():
                 "title": "Domestic Shipping",
                 "desc": "Reliable and timely delivery across the country for businesses and individuals.",
                 "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuDwaQv2FiP7W2BjrAaMw60_VOlbRGOxTzwDjwqpPBiQy6IUQDuujzLS2WJ7jInkX7x23AXUjiucRUDUPlAxf6HtaGgZUGHQgIAotyIEFw5aw_VVBhsQg6g-XrJJKyMOYJhjRnYV2WlrR0LBh5MRXsKj--Eb6XwSe94Rlwmywbp_10g7lmSOIHHaKvtRgTOggUz4edR5zWIKcHlVgRKnsjWmcfOUoRj1RhN-7L1BpfP0zLmTIipNqP0xkEp3FpAnonFYzxdI79nQHh1T",
+                "link": "/services/domestic-shipping",
             },
             {
                 "title": "International Shipping",
                 "desc": "Seamless global logistics with customs clearance support worldwide.",
                 "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuBQ1A7zPB1xnPrnUr9LtV19kMqzoK0-VMRiSB2agLNbGuNIFOn3GEODdp-7UiTDASipFjx3HOPRBOM7BdjEUe6ka-8tJOBLsL9mXc7ZR4ODz6VECpEoYfbJaBX-c6ME7idAdHwTkoQDs8yrlA2hNVRHJ07SXXFAvEriazITPqPIaygsjUgUXY1v2RjWvPl7yGekgc0qpXP5G6JhwsbhYivEG8ofMVohtA90th2Ermhmn2Pcd3ZWEQ_cIqRsKQxhPx5bjK-U13h3wlNG",
+                "link": "/services/international-shipping",
             },
             {
                 "title": "Freight & Cargo",
                 "desc": "Specialized shipping for heavy, bulk, or large items via air, sea, and land.",
                 "img": "https://lh3.googleusercontent.com/aida-public/AB6AXuDwnQHkB80bjYfrnRSZUmJkHVsgeBaMZLyVzdQvujS-cUNz5BxcCZxMeoQe0Mv7Ss_uWHcKe4RzT2xGa256ErwaldpHHuRKdBmoDOSDzTaB6kMh1RMSnqyer1H8tMyDkqgqts7DsA0cV6QPSlIbD97fJb6KJuvZO_eqYvRXbfdUoIi0b7Q1Q4jnylRdzARQO3cYUAnwtpOUryHD7VomPQoa05hTNckWb-tmawNogWouTB1TnJEPmayPvDpACFpPmOS5o-1uIiodkZ_g",
+                "link": "/services/freight-cargo",
             },
         ]
 
@@ -107,7 +114,7 @@ def home():
                     ui.label(s["desc"]).classes(
                         "text-sm text-gray-600 dark:text-gray-400 mb-3"
                     )
-                    ui.link("Learn More →", "#").classes(
+                    ui.link("Learn More →", s["link"]).classes(
                         "text-sm font-bold text-[{}] hover:underline".format(ACCENT)
                     )
 
