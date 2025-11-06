@@ -25,9 +25,12 @@ def services_page():
             ui.link("About Us", "#").classes("hover:text-[{}]".format(PRIMARY))
             ui.link("Services", "#").classes("text-[{}] font-bold".format(PRIMARY))
             ui.link("Tracking", "#").classes("hover:text-[{}]".format(PRIMARY))
-        ui.button("Get a Quote", icon="arrow_forward", color=PRIMARY).classes(
-            "text-white font-bold"
-        )
+        ui.button(
+            "Get a Quote",
+            icon="arrow_forward",
+            color=PRIMARY,
+            on_click=lambda: ui.navigate.to("/contact"),
+        ).classes("text-white font-bold")
 
     # HERO SECTION
     with ui.card().classes(
@@ -109,9 +112,11 @@ def services_page():
         ui.label(
             "Get in touch for a personalized logistics strategy tailored to your unique requirements."
         ).classes("text-gray-600 mb-6")
-        ui.button("Contact Sales for a Custom Solution", color=PRIMARY).classes(
-            "text-white font-bold px-6 py-3"
-        )
+        ui.button(
+            "Contact Sales for a Custom Solution",
+            color=PRIMARY,
+            on_click=lambda: ui.navigate.to("/contact"),
+        ).classes("text-white font-bold px-6 py-3")
 
     # FOOTER
     with ui.footer().classes(

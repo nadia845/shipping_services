@@ -31,13 +31,22 @@ def home():
             tracking_input = ui.input(placeholder="Enter your tracking number").classes(
                 "w-full rounded-l-xl h-12 px-4 text-black"
             )
-            ui.button(
-                "Track", on_click=lambda: ui.notify(f"Tracking: {tracking_input.value}")
-            ).classes("bg-[{}] text-white h-12 rounded-r-xl".format(ACCENT))
+
+            def handle_track():
+                if not tracking_input.value:
+                    ui.notify("Please enter a tracking number.", color="negative")
+                    return
+                ui.navigate.to(f"/tracking/{tracking_input.value}")
+
+            ui.button("Track", on_click=handle_track).classes(
+                "bg-[{}] text-white h-12 rounded-r-xl".format(ACCENT)
+            )
         ui.label("OR").classes("text-white/70 mt-2")
-        ui.button("Get a Quick Quote", color=ACCENT).classes(
-            "mt-4 px-8 py-3 text-base font-bold"
-        )
+        ui.button(
+            "Get a Quick Quote",
+            color=ACCENT,
+            on_click=lambda: ui.navigate.to("/contact"),
+        ).classes("mt-4 px-8 py-3 text-base font-bold")
 
     # WHY CHOOSE US SECTION
     with ui.column().classes(

@@ -46,7 +46,9 @@ def login_page():
                             ui.button("Login").props("flat").classes(
                                 "flex-1 h-full text-[#0A2463] text-sm font-medium bg-[#f6f6f8] dark:bg-[#101622] shadow-sm"
                             )
-                            ui.button("Register").props("flat").classes(
+                            ui.button(
+                                "Register", on_click=lambda: ui.navigate.to("/signup")
+                            ).props("flat").classes(
                                 "flex-1 h-full text-[#4c669a] text-sm font-medium"
                             )
 

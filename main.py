@@ -9,6 +9,7 @@ from pages import services
 from pages import service_domestic
 from pages import service_international
 from pages import service_freight
+from pages import tracking
 
 app.add_static_files("/assets", "assets")
 # Start the NiceGUI application

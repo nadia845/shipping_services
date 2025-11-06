@@ -94,6 +94,6 @@ def signup_page():
 
                 with ui.row().classes("justify-center mt-6 text-sm text-[#4c669a]"):
                     ui.label("Already have an account?")
-                    ui.link("Log In", "/login").classes(
+                    ui.link("Log In", target="/login").classes(
                         "font-bold text-[#1152d4] hover:underline"
                     )
